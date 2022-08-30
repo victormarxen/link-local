@@ -1,0 +1,24 @@
+<h1>Homepage</h1>
+<ul>
+  <li>Navbar</li>
+  <li>Banner like Uber (optional)</li>
+  <li>Categories (Unabled when country is not selected)</li>
+  <li>GoButton</li>
+  <li>Footer</li>
+</ul>
+
+<div class="btn-group mx-auto">
+<%= form_with url: categories_path, method: :get, class: "d-flex my-3 align-item-center" do %>
+  <%= text_field_tag :country,
+    params[:country],
+    class: "form-control",
+    placeholder: "Where to?"
+  %>
+<% end %>
+</div>
+
+<ul>
+  <% @categories.each do |category|%>
+    <li><%= link_to category.name, category_path(category, country: params[:country]) %></li>
+  <% end %>
+</ul>

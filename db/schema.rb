@@ -10,9 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_29_140355) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_30_104124) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "applications", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "playstore"
+    t.string "appstore"
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_applications_on_category_id"
+  end
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.bigint "country_id", null: false
+    t.bigint "application_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["application_id"], name: "index_bookmarks_on_application_id"
+    t.index ["country_id"], name: "index_bookmarks_on_country_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "application_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "country_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["application_id"], name: "index_favourites_on_application_id"
+    t.index ["country_id"], name: "index_favourites_on_country_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +69,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_140355) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "applications", "categories"
+  add_foreign_key "bookmarks", "applications"
+  add_foreign_key "bookmarks", "countries"
+  add_foreign_key "favourites", "applications"
+  add_foreign_key "favourites", "countries"
+  add_foreign_key "favourites", "users"
 end
