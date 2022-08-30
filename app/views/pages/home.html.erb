@@ -1,16 +1,37 @@
-<h1>Landing Page</h1>
-<ul>
-  <li>no navbar</li>
-  <li>LinkLocal (Logo)</li>
-  <li>Find the apps used by local</li>
-  <li>Search bar</li>
-  <li>Log In Button</li>
-  <li>Sign up Button (Don't have a account)</li>
-  <li>Footer</li>
-</ul>
+<html lang="en">
+    <body>
+          <div class="home-page" style="">
+            <div class="home-page__top">
+              <%= image_tag "logo.png", class: "home-page__logo" %>
+              
+              <div class="btn-group mx-auto">
+                <%= form_with url: categories_path, method: :get, class: "d-flex my-3 align-item-center" do %>
+                  <%= text_field_tag :country, params[:country], class: "form-control", placeholder: "Where to?" %>
+                <% end %>
+               </div>
 
-<div class="btn-group mx-auto">
-  <%= form_with url: categories_path, method: :get, class: "d-flex my-3 align-item-center" do %>
-    <%= text_field_tag :country, params[:country], class: "form-control", placeholder: "Where to?" %>
-  <% end %>
-</div>
+              <div class="home-page__buttons">
+                <button class="subscribe-button">Sign In
+                </button>
+                <button class="subscribe-button subscribe-button-mt">Create an account
+                </button>
+              </div>
+            </div>
+
+            <div class="home-page__app-logos home-page__bottom">
+              <%= image_tag "apple.png" %>
+            </div>
+
+          </div>
+          <footer class="bg-light text-center text-lg-start">
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">linklocal.com</a>
+  </div>
+</footer>
+
+    </body>
+</html>
+
+
+
