@@ -1,2 +1,35 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<html lang="en">
+    <body>
+          <div class="home-page" style="">
+            <div class="home-page__top">
+              <%= image_tag "logo.png", class: "home-page__logo" %>
+
+              <div class="home-page__search-bar">
+                  <input id="search-input" type="search" id="form1" class="form-control" placeholder="Search"/>
+                <button id="search-button" type="button" class="btn btn-primary">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+
+              <div class="home-page__buttons">
+                <button class="subscribe-button">Sign In
+                </button>
+                <button class="subscribe-button subscribe-button-mt">Create an account
+                </button>
+              </div>
+            </div>
+
+            <div class="home-page__app-logos home-page__bottom">
+              <%= image_tag "apple.png" %>
+            </div>
+
+          </div>
+          <footer class="bg-light text-center text-lg-start">
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">linklocal.com</a>
+  </div>
+</footer>
+
+    </body>
+</html>
