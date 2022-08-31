@@ -1,18 +1,21 @@
-<h1>Homepage</h1>
-<ul>
-  <li>Navbar</li>
-  <li>Banner like Uber (optional)</li>
-  <li>Categories (Unabled when country is not selected)</li>
-  <li>GoButton</li>
-  <li>Footer</li>
+<div class="col-md-12 text-center">
+  <%= render 'shared/search' %>
+</div>
+
+<ul data-search-country-target="country">
+  <% @categories.each do |category|%>
+    <li><%= link_to category.name, category_path(category, country: params[:country]) %></li>
+  <% end %>
 </ul>
 
-<div>
-  <%= render 'shared/search' %>
-
-  <ul data-search-country-target="country">
-    <% @categories.each do |category|%>
-      <li><%= link_to category.name, category_path(category, country: params[:country]) %></li>
-    <% end %>
-  </ul>
+<div class="row">
+  <%= render 'category', icon: '🫶', title: 'Date' %>
+  <%= render 'category', icon: '🕺', title: 'Events' %>
+  <%= render 'category', icon: '🤝', title: 'Buy & Sell' %>
+  <%= render 'category', icon: '🥡', title: 'Food Delivery' %>
+  <%= render 'category', icon: '🚕', title: 'Ride' %>
+  <%= render 'category', icon: '🚆', title: 'Public Commute' %>
+  <%= render 'category', icon: '🏠', title: 'Find Home ' %>
+  <%= render 'category', icon: '🛌', title: 'Book Stay' %>
+  <%= render 'category', icon: '💸', title: 'Banking' %>
 </div>
