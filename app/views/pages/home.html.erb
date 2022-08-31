@@ -2,13 +2,9 @@
     <body>
           <div class="home-page" style="">
             <div class="home-page__top">
-              <%= image_tag "logo.png", class: "home-page__logo" %>
-              
-              <div class="btn-group mx-auto">
-                <%= form_with url: categories_path, method: :get, class: "d-flex my-3 align-item-center" do %>
-                  <%= text_field_tag :country, params[:country], class: "form-control", placeholder: "Where to?" %>
-                <% end %>
-               </div>
+              <%= image_tag "Logo4.jpg", class: "home-page__logo" %>
+
+               <%= render 'shared/search' %>
 
               <div class="home-page__buttons">
                 <button class="subscribe-button">Sign In
@@ -32,6 +28,3 @@
 
     </body>
 </html>
-
-
-

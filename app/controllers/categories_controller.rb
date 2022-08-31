@@ -8,12 +8,10 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    if params[:country].present?
-      country = Country.find_by(name: params[:country].capitalize)
-      category_id = params[:id]
+    country = Country.find_by(name: params[:country])
 
-      @applications = Application.joins(:countries).where(countries: { id: country&.id }, category_id:)
-    end
+    @applications = Application.joins(:countries)
+                      .where(countries: { id: country&.id }, category: @category)
   end
 
   private

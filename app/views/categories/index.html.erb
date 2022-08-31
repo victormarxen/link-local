@@ -1,33 +1,12 @@
-<h1>Homepage</h1>
-<ul>
-  <li>Navbar</li>
-  <li>Banner like Uber (optional)</li>
-  <li>Categories (Unabled when country is not selected)</li>
-  <li>GoButton</li>
-  <li>Footer</li>
-</ul>
-
 <div class="col-md-12 text-center">
-<div class="btn-group">
-<%= form_with url: categories_path, method: :get, class: "" do %>
-  <%= text_field_tag :country,
-    params[:country],
-    class: "form-control",
-    placeholder: "Where to?"
-  %>
-<% end %>
-</div>
+  <%= render 'shared/search' %>
 </div>
 
-<ul>
+<ul data-search-country-target="country">
   <% @categories.each do |category|%>
     <li><%= link_to category.name, category_path(category, country: params[:country]) %></li>
   <% end %>
 </ul>
-
-<head>
-  <link rel="stylesheet" href="_categories.scss">
-</head>
 
 <div class="row">
   <%= render 'category', icon: '🫶', title: 'Date' %>
@@ -39,10 +18,4 @@
   <%= render 'category', icon: '🏠', title: 'Find Home ' %>
   <%= render 'category', icon: '🛌', title: 'Book Stay' %>
   <%= render 'category', icon: '💸', title: 'Banking' %>
-</div>
-
-<div class="col-md-12 text-center">
- <a href="#">
-<button type="button" class="btn btn-primary text-center">Exlpore</button>
- </a>
 </div>
