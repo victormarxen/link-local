@@ -7,18 +7,12 @@
   <li>Footer</li>
 </ul>
 
-<div class="btn-group mx-auto">
-<%= form_with url: categories_path, method: :get, class: "d-flex my-3 align-item-center" do %>
-  <%= text_field_tag :country,
-    params[:country],
-    class: "form-control",
-    placeholder: "Where to?"
-  %>
-<% end %>
-</div>
+<div>
+  <%= render 'shared/search' %>
 
-<ul>
-  <% @categories.each do |category|%>
-    <li><%= link_to category.name, category_path(category, country: params[:country]) %></li>
-  <% end %>
-</ul>
+  <ul data-search-country-target="country">
+    <% @categories.each do |category|%>
+      <li><%= link_to category.name, category_path(category, country: params[:country]) %></li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,13 @@
+<div class="btn-group mx-auto">
+  <%= form_with url: categories_path, method: :get, class: "d-flex my-3 align-item-center" do %>
+    <%= country_select(nil, :country,
+      {
+        priority_countries: ["DE", "PT"],
+        selected: params[:country]
+      },
+      {
+        class: "form-control",
+        data: { controller: "dropdown-submit", action: "change->dropdown-submit#change" }
+      }) %>
+  <% end %>
+</div>

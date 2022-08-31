@@ -1,4 +1,5 @@
 class FavouritesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_favourite, only: %i[destroy]
 
   def index
