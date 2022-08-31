@@ -1,17 +1,11 @@
 <%= link_to "Home", categories_path(country: params[:country]) %>
 
+<%= link_to "Save", favourites_path %>
+
 <h1><%= @category.name %></h1>
-<ul>
-  <li>Navbar</li>
-  <li>Banner like Uber</li>
-  <li>GoBackbutton</li>
-  <li>Expandable App Cards with Name, Description, 2 Links and Favourites/SaveButton</li>
-  <li>SearchAgainButton</li>
-  <li>Footer</li>
-</ul>
 
 <% if @applications.empty? %>
-  <p>NOT AVAILABLE FOR <%= params[:country].upcase %></p>
+  <h3>NOT AVAILABLE FOR THIS COUNTRY</h3>
 <% else %>
   <ul>
     <% @applications.each do |app| %>

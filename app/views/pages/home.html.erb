@@ -1,30 +1,25 @@
-<html lang="en">
-    <body>
-          <div class="home-page" style="">
-            <div class="home-page__top">
-              <%= image_tag "Logo4.jpg", class: "home-page__logo" %>
+<html>
+  <body>
+    <div class="col-md-12 text-center">
+      <div class="home-page" style="">
+        <div class="home-page__top">
+          <%= image_tag "Logo4.jpg", class: "home-page__logo" %>
+        </div>
 
-               <%= render 'shared/search' %>
+        <div class="col-md-12 text-center">
+          <%= render 'shared/search' %>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
 
-              <div class="home-page__buttons">
-                <button class="subscribe-button">Sign In
-                </button>
-                <button class="subscribe-button subscribe-button-mt">Create an account
-                </button>
-              </div>
-            </div>
+        <div class="home-page__buttons">
+          <button class="btn btn-primary">Sign In</button>
+          <br>
+          <button class="btn btn-primary">Create an account</button>
+        </div>
+      </div>
+    </div>
 
-            <div class="home-page__app-logos home-page__bottom">
-              <%= image_tag "apple.png" %>
-            </div>
-
-          </div>
-          <footer class="bg-light text-center text-lg-start">
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2022 Copyright:
-    <a class="text-dark" href="https://mdbootstrap.com/">linklocal.com</a>
-  </div>
-</footer>
-
-    </body>
+    <footer class="bg-light text-center text-lg-start">
+    </footer>
+  </body>
 </html>
