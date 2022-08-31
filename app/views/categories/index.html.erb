@@ -7,8 +7,9 @@
   <li>Footer</li>
 </ul>
 
-<div class="btn-group mx-auto">
-<%= form_with url: categories_path, method: :get, class: "d-flex my-3 align-item-center" do %>
+<div class="col-md-12 text-center">
+<div class="btn-group">
+<%= form_with url: categories_path, method: :get, class: "" do %>
   <%= text_field_tag :country,
     params[:country],
     class: "form-control",
@@ -16,9 +17,32 @@
   %>
 <% end %>
 </div>
+</div>
 
 <ul>
   <% @categories.each do |category|%>
     <li><%= link_to category.name, category_path(category, country: params[:country]) %></li>
   <% end %>
 </ul>
+
+<head>
+  <link rel="stylesheet" href="_categories.scss">
+</head>
+
+<div class="row">
+  <%= render 'category', icon: '🫶', title: 'Date' %>
+  <%= render 'category', icon: '🕺', title: 'Events' %>
+  <%= render 'category', icon: '🤝', title: 'Buy & Sell' %>
+  <%= render 'category', icon: '🥡', title: 'Food Delivery' %>
+  <%= render 'category', icon: '🚕', title: 'Ride' %>
+  <%= render 'category', icon: '🚆', title: 'Public Commute' %>
+  <%= render 'category', icon: '🏠', title: 'Find Home ' %>
+  <%= render 'category', icon: '🛌', title: 'Book Stay' %>
+  <%= render 'category', icon: '💸', title: 'Banking' %>
+</div>
+
+<div class="col-md-12 text-center">
+ <a href="#">
+<button type="button" class="btn btn-primary text-center">Exlpore</button>
+ </a>
+</div>
