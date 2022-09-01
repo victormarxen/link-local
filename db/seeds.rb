@@ -17,3 +17,4 @@ banking = { name: 'Banking', icon: '💳' }
   puts "Created #{category.name}"
 end
 puts 'Finished!'
+

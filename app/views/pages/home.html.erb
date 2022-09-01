@@ -1,21 +1,21 @@
 <%= video_tag "landing.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
-<div class="col-md-12 text-center">
+<div class="col-md-12 text-center text-white">
   <div class="home-page" style="">
     <div class="home-page__top">
       <%= image_tag "Logo4.jpg", class: "home-page__logo" %>
       <br>
       <br>
-      <h4>GET THE APPS USED BY LOCALS.</h4>
+      <h4>Get the apps used by locals.</h4>
       <br>
       <br>
-      <h4>WHERE ARE YOU GOING ?</h4>
+      <h4>Choose a country:</h4>
       <%= render 'shared/search' %>
     </div>
 
     <div class="home-page__buttons">
-      <%= link_to "Sign In", new_user_session_path, class: "btn btn-primary" %>
+      <%= link_to "Sign In", new_user_session_path, class: "btn btn-primary rounded-4" %>
       <br>
-      <%= link_to "Create an account", new_user_registration_path, class: "btn btn-primary" %>
+      <%= link_to "Create an account", new_user_registration_path, class: "text-white text-decoration-none" %>
     </div>
   </div>
 </div>
