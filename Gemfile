@@ -79,4 +79,4 @@ group :test do
   gem "webdrivers"
 end
 
-gem "pg_search"
+gem "dotenv-rails", groups: [:development, :test]
