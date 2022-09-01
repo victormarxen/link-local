@@ -1,0 +1,29 @@
+<%# <div class="col-12">
+    <div class="shadow rounded-4 mb-4 d-flex ">
+      <div class="flex-grow-1 d-flex flex-row align-items-center px-4 py-3">
+        <span class="me-3" style="font-size:2em"><%= icon %>
+          <%# <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <strong class="text-black text-decoration-none"><%= title %>
+          <%# </button>
+        </div>
+    </div>
+   </div>
+</div> %>
+
+<body>
+  <div class="col-12 mb-3">
+    <div class="container shadow rounded-4 py-2 listingcard">
+      <button type="button" class="dropdown">
+        <%= image_tag "Uber.png" %>
+        <h2> application.name </h2> </button>
+        <div class="content">
+          <p> application.description
+          </p>
+           <div class="links">
+              <a href="appstore"> <%= image_tag "apple.jpg" %> </a>
+               <a href="playstore"> <%= image_tag "play.jpg" %> </a>
+            </div>
+        </div>
+      </div>
+  </div>
+</body>
