@@ -1,23 +1,25 @@
-<%= link_to "Start", '/' %>
+<%= link_to "Start", root_path %>
 
 <div class="col-md-12 text-center">
   <%= render 'shared/search' %>
 </div>
-
-<ul data-search-country-target="country">
-  <% @categories.each do |category|%>
-    <li><%= link_to category.name, category_path(category, country: params[:country]) %></li>
-  <% end %>
-</ul>
-
+<br>
 <div class="row">
-  <%= render 'categorycard', icon: '🫶', title: 'Date' %>
-  <%= render 'categorycard', icon: '🕺', title: 'Events' %>
-  <%= render 'categorycard', icon: '🤝', title: 'Buy & Sell' %>
-  <%= render 'categorycard', icon: '🥡', title: 'Food Delivery' %>
-  <%= render 'categorycard', icon: '🚕', title: 'Ride' %>
-  <%= render 'categorycard', icon: '🚆', title: 'Public Commute' %>
-  <%= render 'categorycard', icon: '🏠', title: 'Find Home ' %>
-  <%= render 'categorycard', icon: '🛌', title: 'Book Stay' %>
-  <%= render 'categorycard', icon: '💸', title: 'Banking' %>
+  <ul data-search-country-target="country" style="list-style: none;">
+    <% @categories.each do |category|%>
+      <li><%= render 'categorycard', icon: category.icon, title: category.name, category: category, country: params[:country] %></li>
+    <% end %>
+  </ul>
 </div>
+
+<%# <div class="row"> %>
+  <%#= render 'categorycard', icon: '❤️', title: 'Date' %>
+  <%#= render 'categorycard', icon: '🕺', title: 'Events' %>
+  <%#= render 'categorycard', icon: '🤝', title: 'Marketplaces' %>
+  <%#= render 'categorycard', icon: '🍕', title: 'Delivery' %>
+  <%#= render 'categorycard', icon: '🚕', title: 'Ride' %>
+  <%#= render 'categorycard', icon: '🚆', title: 'Transport' %>
+  <%#= render 'categorycard', icon: '🏠', title: 'Flats' %>
+  <%#= render 'categorycard', icon: '🛌', title: 'Accomodation' %>
+  <%#= render 'categorycard', icon: '💳', title: 'Banking' %>
+<%# </div> %>
