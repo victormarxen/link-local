@@ -1,24 +1,23 @@
-<h1>Homepage</h1>
-<ul>
-  <li>Navbar</li>
-  <li>Banner like Uber (optional)</li>
-  <li>Categories (Unabled when country is not selected)</li>
-  <li>GoButton</li>
-  <li>Footer</li>
-</ul>
+<%= link_to "Start", '/' %>
 
-<div class="btn-group mx-auto">
-<%= form_with url: categories_path, method: :get, class: "d-flex my-3 align-item-center" do %>
-  <%= text_field_tag :country,
-    params[:country],
-    class: "form-control",
-    placeholder: "Where to?"
-  %>
-<% end %>
+<div class="col-md-12 text-center">
+  <%= render 'shared/search' %>
 </div>
 
-<ul>
+<ul data-search-country-target="country">
   <% @categories.each do |category|%>
     <li><%= link_to category.name, category_path(category, country: params[:country]) %></li>
   <% end %>
 </ul>
+
+<div class="row">
+  <%= render 'categorycard', icon: '🫶', title: 'Date' %>
+  <%= render 'categorycard', icon: '🕺', title: 'Events' %>
+  <%= render 'categorycard', icon: '🤝', title: 'Buy & Sell' %>
+  <%= render 'categorycard', icon: '🥡', title: 'Food Delivery' %>
+  <%= render 'categorycard', icon: '🚕', title: 'Ride' %>
+  <%= render 'categorycard', icon: '🚆', title: 'Public Commute' %>
+  <%= render 'categorycard', icon: '🏠', title: 'Find Home ' %>
+  <%= render 'categorycard', icon: '🛌', title: 'Book Stay' %>
+  <%= render 'categorycard', icon: '💸', title: 'Banking' %>
+</div>

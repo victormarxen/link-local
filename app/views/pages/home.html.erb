@@ -1,16 +1,29 @@
-<h1>Landing Page</h1>
-<ul>
-  <li>no navbar</li>
-  <li>LinkLocal (Logo)</li>
-  <li>Find the apps used by local</li>
-  <li>Search bar</li>
-  <li>Log In Button</li>
-  <li>Sign up Button (Don't have a account)</li>
-  <li>Footer</li>
-</ul>
+<html>
+  <body>
+    <div class="col-md-12 text-center">
+      <div class="home-page" style="">
+        <div class="home-page__top">
+          <%= image_tag "Logo4.jpg", class: "home-page__logo" %>
+          <br>
+          <br>
+          <h4>FIND THE APPS USED BY LOCALS.</h4>
+        </div>
 
-<div class="btn-group mx-auto">
-  <%= form_with url: categories_path, method: :get, class: "d-flex my-3 align-item-center" do %>
-    <%= text_field_tag :country, params[:country], class: "form-control", placeholder: "Where to?" %>
-  <% end %>
-</div>
+        <div class="col-md-12 text-center">
+          <h4>WHERE ARE YOU GOING ?</h4>
+          <br>
+          <%= render 'shared/search' %>
+        </div>
+
+        <div class="home-page__buttons">
+          <button class="btn btn-primary">Sign In</button>
+          <br>
+          <button class="btn btn-primary">Create an account</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start">
+    </footer>
+  </body>
+</html>
