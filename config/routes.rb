@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   resources :categories, only: %i[index show]
   resources :favourites, only: %i[index create destroy]
+
+  get "my_profile", to: "users#my_profile"
 end
