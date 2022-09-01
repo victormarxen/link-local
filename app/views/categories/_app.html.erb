@@ -1,17 +1,14 @@
-<body>
-  <div class="col-12 mb-3">
-    <div class="container shadow rounded-4 py-2 listingcard">
-      <button type="button" class="dropdown">
-        <%= image_tag "Uber.png" %>
-        <h2> application.name </h2> </button>
-        <div class="content">
-          <p> application.description
-          </p>
-           <div class="links">
-              <a href="appstore"> <%= image_tag "apple.jpg" %> </a>
-               <a href="playstore"> <%= image_tag "play.jpg" %> </a>
-            </div>
-        </div>
+<div class="col-12 mb-3">
+  <div class="container shadow rounded-4 py-2 listingcard">
+    <button type="button" class="dropdown">
+      <%= image_tag "Uber.png" %>
+      <h2> <%= name %> --- <%= link_to "Save", favourites_path %></h2> </button>
+      <div class="content">
+        <p> <%= description %> </p>
+          <div class="links">
+            <a href="appstore"> <%= image_tag "apple.jpg" %> </a>
+              <a href="playstore"> <%= image_tag "play.jpg" %> </a>
+          </div>
       </div>
-  </div>
-</body>
+    </div>
+</div>

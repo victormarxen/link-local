@@ -7,18 +7,17 @@
 <% else %>
   <ul>
     <% @applications.each do |app| %>
-      <li><%= app.name %> <%= link_to "Save", favourites_path %></li>
-      <li><%= app.description %></li>
+        <%= render 'app', name: app.name, description: app.description %>
     <% end %>
   </ul>
 <% end %>
 
-<div class="row">
-  <%= render 'app', title: 'Uber' %>
-  <%= render 'app', title: 'Uber' %>
-  <%= render 'app', title: 'Uber' %>
-  <%= render 'app', title: 'Uber' %>
-</div>
+<%# <div class="row"> %>
+  <%# <%= render 'app', title: 'Uber' %>
+  <%# <%= render 'app', title: 'Uber' %>
+  <%# <%= render 'app', title: 'Uber' %>
+  <%# <%= render 'app', title: 'Uber' %>
+<%# </div> %>
 
 <div class="col-md-12 text-center">
   <a href="#">

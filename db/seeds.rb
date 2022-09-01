@@ -1,17 +1,20 @@
-User.destroy_all
-Country.destroy_all
+puts 'Cleaning database...'
 Category.destroy_all
-Application.destroy_all
-Bookmark.destroy_all
 
-# 1. Create 2 users;
+puts 'Creating categories...'
+dating = { name: 'Dating', icon: '❤️' }
+events =  { name: 'Events', icon: '🕺' }
+marketplaces = { name: 'Marketplaces', icon: '🤝' }
+delivery =  { name: 'Delivery', icon: '🍕' }
+ride = { name: 'Ride', icon: '🚕' }
+transport = { name: 'Transport', icon: '🚆' }
+flats = { name: 'Flats', icon: '🏠' }
+accomodation = { name: 'Accomodation', icon: '🛌' }
+banking = { name: 'Banking', icon: '💳' }
 
-# 2. Create countries;
+[dating, events, marketplaces, delivery, ride, transport, flats, accomodation, banking].each do |attributes|
+  category = Category.create!(attributes)
+  puts "Created #{category.name}"
+end
+puts 'Finished!'
 
-# 3. Create categories;
-
-# 4. Create Application;
-
-# 4.1. Connect it to the respective category;
-
-# 5. Create Bookmarks (connecting the bookmark with a country and an application
