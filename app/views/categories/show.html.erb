@@ -1,7 +1,5 @@
 <%= link_to "Home", categories_path(country: params[:country]) %>
 
-<%= link_to "Save", favourites_path %>
-
 <h1><%= @category.name %></h1>
 
 <% if @applications.empty? %>
@@ -9,7 +7,7 @@
 <% else %>
   <ul>
     <% @applications.each do |app| %>
-      <li><%= app.name %></li>
+      <li><%= app.name %> <%= link_to "Save", favourites_path %></li>
     <% end %>
   </ul>
 <% end %>
