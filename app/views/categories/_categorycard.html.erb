@@ -1,16 +1,10 @@
-<head>
-  <link rel="stylesheet" href="_category.scss">
-</head>
-
-
-  <div class="col-6">
-    <div class="shadow rounded-4 mb-4 d-flex fs-md-3 fs-sm-4">
-      <a href="#"
-        class="text-black flex-grow-1 d-flex flex-row align-items-center text-decoration-none px-4 py-3">
-        <span class="me-3" style="font-size:2em"><%= icon %></span>
-          <div class="card-product-infos">
-          <strong class=""><%= title %></strong>
-        </div>
-      </a>
-    </div>
+<div class="col-md-12 text-center">
+  <div class="shadow rounded-4 mb-4 d-flex fs-md-3 fs-sm-4">
+    <%= link_to category_path(category, country), class: "text-black flex-grow-1 d-flex flex-row align-items-center text-decoration-none px-4 py-3" do %>
+      <span class="me-3" style="font-size:2em"><%= icon %></span>
+        <div class="card-product-infos">
+        <strong class=""><%= title %></strong>
+      </div>
+    <% end %>
   </div>
+</div>
