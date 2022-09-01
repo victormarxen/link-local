@@ -8,6 +8,20 @@
   <ul>
     <% @applications.each do |app| %>
       <li><%= app.name %> <%= link_to "Save", favourites_path %></li>
+      <li><%= app.description %></li>
     <% end %>
   </ul>
 <% end %>
+
+<div class="row">
+  <%= render 'app', title: 'Uber' %>
+  <%= render 'app', title: 'Uber' %>
+  <%= render 'app', title: 'Uber' %>
+  <%= render 'app', title: 'Uber' %>
+</div>
+
+<div class="col-md-12 text-center">
+  <a href="#">
+    <button type="button" class="btn btn-primary text-center">Search Again</button>
+  </a>
+</div>
