@@ -32,10 +32,9 @@
 }
 
 .links {
-  display: flex;
-  justify-content: start;
-  justify-content: space-around;
-  margin-left: 70%;
+  a {
+    text-decoration: none;
+  }
 }
 
 .links img{

@@ -10,3 +10,26 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.white-bg {
+  background: white;
+  padding: 12px;
+
+  button {
+    background: $blue;
+    opacity: 0.8;
+  }
+}
+
+.display-contents {
+  display: contents;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: $blue;
+}

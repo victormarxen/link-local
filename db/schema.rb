@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_01_124430) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_02_133530) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -76,13 +76,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_124430) do
   end
 
   create_table "favourites", force: :cascade do |t|
-    t.bigint "application_id", null: false
     t.bigint "user_id", null: false
-    t.bigint "country_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["application_id"], name: "index_favourites_on_application_id"
-    t.index ["country_id"], name: "index_favourites_on_country_id"
+    t.bigint "bookmark_id", null: false
+    t.index ["bookmark_id"], name: "index_favourites_on_bookmark_id"
     t.index ["user_id"], name: "index_favourites_on_user_id"
   end
 
@@ -105,7 +103,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_124430) do
   add_foreign_key "applications", "categories"
   add_foreign_key "bookmarks", "applications"
   add_foreign_key "bookmarks", "countries"
-  add_foreign_key "favourites", "applications"
-  add_foreign_key "favourites", "countries"
+  add_foreign_key "favourites", "bookmarks"
   add_foreign_key "favourites", "users"
 end

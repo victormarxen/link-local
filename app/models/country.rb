@@ -1,5 +1,3 @@
 class Country < ApplicationRecord
-  has_many :favourites
-  
-
+  has_many :bookmarks, dependent: :destroy
 end

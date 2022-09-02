@@ -1,30 +1,15 @@
-<%= link_to "Home", categories_path(country: params[:country]) %>
+<h1 class="text-center my-4"><%= @category.name %></h1>
 
-<div class="col-md-12 text-center">
-  <%= render 'shared/navbar' %>
-</div>
-
-<h1><%= @category.name %></h1>
-
-<% if @applications.empty? %>
-  <h3>NOT AVAILABLE FOR THIS COUNTRY</h3>
+<% if @bookmarks.empty? %>
+  <h5 class="alert alert-warning">Sorry, no applications found for this country..</h5>
 <% else %>
-  <ul>
-    <% @applications.each do |app| %>
-        <%= render 'app', name: app.name, description: app.description %>
-    <% end %>
-  </ul>
+  <% @bookmarks.each do |bookmark| %>
+    <%= render 'app', bookmark: bookmark %>
+  <% end %>
 <% end %>
 
-<%# <div class="row"> %>
-  <%# <%= render 'app', title: 'Uber' %>
-  <%# <%= render 'app', title: 'Uber' %>
-  <%# <%= render 'app', title: 'Uber' %>
-  <%# <%= render 'app', title: 'Uber' %>
-<%# </div> %>
-
 <div class="col-md-12 text-center">
-  <a href="/">
+  <%= link_to :back do %>
     <button type="button" class="btn btn-primary text-center">Search Again</button>
-  </a>
+  <% end %>
 </div>

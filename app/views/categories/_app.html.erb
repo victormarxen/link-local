@@ -1,14 +1,32 @@
 <div class="col-12 mb-3">
   <div class="container shadow rounded-4 py-2 listingcard">
     <button type="button" class="dropdown">
-      <%= image_tag "Uber.png" %>
-      <h2> <%= name %> --- <%= link_to "Save", favourites_path %></h2> </button>
-      <div class="content">
-        <p> <%= description %> </p>
-          <div class="links">
-            <a href="appstore"> <%= image_tag "apple.jpg" %> </a>
-              <a href="playstore"> <%= image_tag "play.jpg" %> </a>
-          </div>
+      <%= cl_image_tag bookmark.application.photo.key %>
+      <h2><%= bookmark.application.name %></h2>
+    </button>
+    <div class="content">
+      <p><%= bookmark.application.description %></p>
+      <div class="d-flex justify-content-between">
+        <% if Favourite.find_by(bookmark: bookmark) %>
+          <% if controller_name=="my_profile" %>
+            <%= link_to favourite_path(favourite), data: { turbo_method: "delete" }, class: "no-text-decoration" do %>
+              <p class="m-0 favourite-remove" style="line-height: 35px"><strong><i class="fa-solid fa-circle-minus"></i> Remove</strong></p>
+            <% end %>
+          <% else %>
+            <p class="m-0" style="line-height: 35px"><strong>Already in Favourites</strong></p>
+          <% end %>
+        <% else %>
+          <%= link_to "❤️", favourites_path(bookmark_id: bookmark), data: { turbo_method: "post" }, class: "favourite-btn" %>
+        <% end %>
+        <div class="links">
+          <%= link_to bookmark.application.appstore do %>
+            <%= image_tag "apple.jpg" %>
+          <% end %>
+          <%= link_to bookmark.application.playstore do %>
+            <%= image_tag "play.jpg" %>
+          <% end %>
+        </div>
       </div>
     </div>
+  </div>
 </div>

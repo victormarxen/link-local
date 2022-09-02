@@ -1,12 +1,4 @@
-<%# <%= render 'shared/navbar' %>
-
-<%= link_to "Start", "/" %>
-
-<div class="col-md-12 text-center">
-  <%= render 'shared/navbar' %>
-</div>
-
-<div class="col-md-12 text-center">
+<div class="col-md-12 text-center mt-4">
   <%= render 'shared/search' %>
 </div>
 <br>
@@ -18,15 +10,10 @@
   </ul>
 </div>
 
-
-<%# <div class="row"> %>
-  <%#= render 'categorycard', icon: '❤️', title: 'Date' %>
-  <%#= render 'categorycard', icon: '🕺', title: 'Events' %>
-  <%#= render 'categorycard', icon: '🤝', title: 'Marketplaces' %>
-  <%#= render 'categorycard', icon: '🍕', title: 'Delivery' %>
-  <%#= render 'categorycard', icon: '🚕', title: 'Ride' %>
-  <%#= render 'categorycard', icon: '🚆', title: 'Transport' %>
-  <%#= render 'categorycard', icon: '🏠', title: 'Flats' %>
-  <%#= render 'categorycard', icon: '🛌', title: 'Accomodation' %>
-  <%#= render 'categorycard', icon: '💳', title: 'Banking' %>
-<%# </div> %>
+<div class="row">
+  <ul data-search-country-target="country" style="list-style: none;">
+    <% @categories.each do |category|%>
+      <li><%= render 'categorycard', icon: category.icon, title: category.name, category: category, country: params[:country] %></li>
+    <% end %>
+  </ul>
+</div>
