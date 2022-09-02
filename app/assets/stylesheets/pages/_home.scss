@@ -11,17 +11,7 @@
  }
 
 .home-page {
-  // background-image: url(https://mdbootstrap.com/img/Photos/Others/architecture.webp);
-  background: rgba(67, 67, 67, 0.6);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  min-height: 100vh;
   padding: 150px 20px 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 50px;
 }
 
 .home-page__logo{
@@ -40,6 +30,7 @@
     flex-direction: column;
     align-items: center;
     border-radius: 90ch;
+    margin-top: 150px;
 
 @keyframes TransitioningBackground {
   0% {

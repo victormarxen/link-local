@@ -7,6 +7,8 @@ class FavouritesController < ApplicationController
   end
 
   def create
+    raise
+    # TODO: Change favourites table to have bookmarks id instead of app and country id.
   end
 
   def destroy
