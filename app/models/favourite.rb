@@ -1,5 +1,4 @@
 class Favourite < ApplicationRecord
-  belongs_to :application
+  belongs_to :bookmark
   belongs_to :user
-  belongs_to :country
 end

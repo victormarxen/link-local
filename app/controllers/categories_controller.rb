@@ -6,10 +6,11 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    category = Category.find(params[:id])
     country = Country.find_by(name: params[:format])
-
-    @applications = Application.joins(:countries)
-                      .where(countries: { id: country&.id }, category: @category)
+    @bookmarks = Bookmark.joins(:application)
+                         .where(country: country)
+                         .where("applications.category_id = #{category.id}")
   end
 
   private

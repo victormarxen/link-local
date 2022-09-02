@@ -1,0 +1,35 @@
+.profile-bg {
+  background-image: url("assets/my_profile.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.profile-img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.profile-info {
+  color: rgb(90,90,90);
+  text-align: center;
+}
+
+.profile-link {
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+}
+
+.no-text-decoration {
+  text-decoration: none;
+}
+
+.favourites-cards {
+  padding-bottom: 90px;
+}
+
+.favourite-remove {
+  font-size: 14px;
+}

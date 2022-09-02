@@ -1,10 +1,10 @@
 <h1 class="text-center my-4"><%= @category.name %></h1>
 
-<% if @applications.empty? %>
-  <h3>NOT AVAILABLE FOR THIS COUNTRY</h3>
+<% if @bookmarks.empty? %>
+  <h5 class="alert alert-warning">Sorry, no applications found for this country..</h5>
 <% else %>
-  <% @applications.each do |app| %>
-      <%= render 'app', app: app %>
+  <% @bookmarks.each do |bookmark| %>
+    <%= render 'app', bookmark: bookmark %>
   <% end %>
 <% end %>
 

@@ -26,8 +26,11 @@ end
 
 
 puts "creating users..."
-alex = User.create(email: 'alex@gmail.com', password: "123123")
-a = User.create(email: 'a@a.a', password: "123123")
+alex_img = URI.open("https://cdn.pixabay.com/photo/2021/04/05/12/39/man-6153298_960_720.jpg")
+alex = User.new(first_name: "Alexander", last_name: "Costa", email: 'alex@gmail.com', password: "123123")
+alex.photo.attach(io: alex_img, filename: "alex_photo.jpg", content_type: "image/jpg")
+alex.save
+a = User.create(first_name: "Miguel", last_name: "Costelo", email: 'a@a.a', password: "123123")
 puts "Users created!"
 
 puts "Creating countries.."

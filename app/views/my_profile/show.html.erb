@@ -1,30 +1,18 @@
+<div class='profile-bg'>
+  <div class='d-flex justify-content-center pt-5'>
+    <%= cl_image_tag current_user.photo.key, class: "profile-img" %>
+  </div>
+  <h3 class="text-center mt-2 mb-3"><%= "#{current_user.first_name} #{current_user.last_name}" %></h3>
+  <p class="profile-info"><i class="fa-solid fa-envelope"></i> <%= current_user.email %></p>
+  <div>
+    <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary profile-link mt-4" %>
+    <%= link_to "Sign Out", edit_user_registration_path, class: "profile-link text-center no-text-decoration my-3" %>
+  </div>
 
-<br><br>
-<div class="container-fluid well span6">
-	<div class="row-fluid">
-        <div class="span2" >
-		    <img src="https://secure.gravatar.com/avatar/de9b11d0f9c0569ba917393ed5e5b3ab?s=140&r=g&d=mm" class="img-circle">
-        </div>
-
-        <div class="span8">
-            <h3>Edit User Name: @user.name</h3>
-            <h6>Edit Email: test@email.com</h6>
-            <h6>Location: ?</h6>
-            <h6>Change Password:</h6>
-            <h6><a href="#">More... </a></h6>
-        </div>
-
-        <div class="span2">
-            <div class="btn-group">
-                <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-                    Action
-                    <span class="icon-cog icon-white"></span><span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#"><span class="icon-wrench"></span> Modify</a></li>
-                    <li><a href="#"><span class="icon-trash"></span> Delete</a></li>
-                </ul>
-            </div>
-        </div>
-</div>
+  <h2 class="text-center mt-5 mb-4">❤️ My Favourites</h2>
+  <div class="favourites-cards">
+    <% @favourites.each do |favourite| %>
+      <%= render "categories/app", bookmark: favourite.bookmark, favourite: favourite %>
+    <% end %>
+  </div>
 </div>
