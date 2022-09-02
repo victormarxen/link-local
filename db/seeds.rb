@@ -24,7 +24,6 @@ banking = { name: 'Banking', icon: '💳' }
   puts "Created #{category.name}!"
 end
 
-
 puts "creating users..."
 alex_img = URI.open("https://cdn.pixabay.com/photo/2021/04/05/12/39/man-6153298_960_720.jpg")
 alex = User.new(first_name: "Alexander", last_name: "Costa", email: 'alex@gmail.com', password: "123123")
