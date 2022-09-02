@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    country = Country.find_by(name: params[:format])
+    country = Country.find_by(name: params[:country])
 
     @applications = Application.joins(:countries)
                       .where(countries: { id: country&.id }, category: @category)
