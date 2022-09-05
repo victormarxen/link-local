@@ -3,7 +3,7 @@ class FavouritesController < ApplicationController
   before_action :set_favourite, only: %i[destroy]
 
   def index
-    @favourites = Favourite.where(user: current_user)
+    @favourites = current_user.favourites
   end
 
   def create
