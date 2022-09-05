@@ -1,8 +1,14 @@
-<h1>Saved/Favourite Apps</h1>
-<ul>
-  <li>Navbar</li>
-  <li>Banner like Uber</li>
-  <li>GoBackbutton</li>
-  <li>Expandable App Cards with Name, Description, 2 Links and Favourites/UnSaveButton</li>
-  <li>Footer</li>
-</ul>
+<%# <div class="col-md-12 text-center mt-4">
+  <%= render 'favourites/favouritescard'%>
+<%# </div> %>
+
+ <h2 class="text-center mt-5 mb-4">My Favourites</h2>
+  <div class="favourites-cards">
+    <% @favourites.group_by {|f| f.bookmark.country}.each do |country|%>
+      <h1> <%= country.first.name %> </h1>
+       <% country.second.each do |favourite|%>
+      <%= render "categories/app", bookmark: favourite.bookmark, favourite: favourite %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
