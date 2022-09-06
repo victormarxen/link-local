@@ -9,18 +9,21 @@ Bookmark.destroy_all
 Favourite.destroy_all
 
 puts 'Creating categories...'
-dating = { name: 'Dating', icon: '❤️' }
-events = { name: 'Events', icon: '🕺' }
-marketplaces = { name: 'Marketplaces', icon: '🤝' }
-delivery = { name: 'Delivery', icon: '🍕' }
-ride = { name: 'Ride', icon: '🚕' }
-transport = { name: 'Transport', icon: '🚆' }
-flats = { name: 'Flats', icon: '🏠' }
-accomodation = { name: 'Accomodation', icon: '🛌' }
-banking = { name: 'Banking', icon: '💳' }
 
-[dating, events, marketplaces, delivery, ride, transport, flats, accomodation, banking].each do |attributes|
-  category = Category.create!(attributes)
+dating = { name: 'Dating', photo: 'app/assets/images/card2.jpeg' }
+events = { name: 'Events', photo: 'app/assets/images/card1.jpeg' }
+marketplaces = { name: 'Marketplaces', photo: 'app/assets/images/card8.jpeg' }
+delivery = { name: 'Delivery', photo: 'app/assets/images/card5.jpeg' }
+ride = { name: 'Ride', photo: 'app/assets/images/card4.jpeg' }
+transport = { name: 'Transport', photo: 'app/assets/images/card12.jpeg' }
+stay = { name: 'Stay', photo: 'app/assets/images/card13.jpeg' }
+banking = { name: 'Banking', photo: 'app/assets/images/card14.jpeg' }
+
+[dating, events, marketplaces, delivery, ride, transport, stay, banking].each do |attributes|
+  category = Category.new(name: attributes[:name])
+  category_img = File.open(attributes[:photo], 'rb')
+  category.photo.attach(io: category_img, filename: "#{attributes[:name]}_category.jpg", content_type: "image/jpg")
+  category.save
   puts "Created #{category.name}!"
 end
 
