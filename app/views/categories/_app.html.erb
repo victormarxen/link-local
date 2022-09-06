@@ -8,7 +8,7 @@
       <p><%= bookmark.application.description %></p>
       <div class="d-flex justify-content-between">
         <% if Favourite.find_by(bookmark: bookmark) %>
-          <% if controller_name=="my_profile" %>
+          <% if controller_name=="favourites" %>
             <%= link_to favourite_path(favourite), data: { turbo_method: "delete" }, class: "no-text-decoration" do %>
               <p class="m-0 favourite-remove" style="line-height: 35px"><strong><i class="fa-solid fa-circle-minus"></i> Remove</strong></p>
             <% end %>

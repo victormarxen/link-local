@@ -1,0 +1,42 @@
+.dropdown {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  // padding-left: 20px;
+  /* padding: 5px; */
+  width: 100%;
+  border: none;
+  // text-align: center;
+  outline: none;
+  font-size: 10px;
+}
+
+.dropdown h1 {
+  padding-left: 5px;
+}
+
+
+.favourites-card{
+  background-color: #eee;
+}
+
+.country-drop{
+  align-items: space-between;
+}
+
+.country-name{
+  // justify-content: center;
+  font-family: sans-serif;
+  font-size: 30px;
+  padding-top: 16px;
+  font-weight: bold;
+}
+
+.country-icon{
+  position: relative;
+  // justify-content: center;
+  font-family: sans-serif;
+  font-size: 35px;
+  padding-top: 16px;
+  font-weight: bold;
+}

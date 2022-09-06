@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
       <div class="d-flex justify-content-around text-align-center">
         <% if current_user %>
-          <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: "delete" }, class: "navbar-link" %>
+          <%= link_to "Saved Apps", favourites_path, class: "navbar-link" %>
           <%= link_to "My Profile", my_profile_path, class: "navbar-link" %>
         <% else %>
           <%= link_to "Log in", new_user_session_path, class: "navbar-link" %>
