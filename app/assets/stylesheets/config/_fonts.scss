@@ -1,9 +1,10 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@600&display=swap');
 
 // Define fonts for body and headers
-$body-font: "sans-serif", "Helvetica", "sans-serif";
-$headers-font: "sans-serif", "Nunito", "Helvetica";
+$body-font: "Noto Sans Devanagari", "Helvetica", "Noto Sans Devanagari";
+$headers-font: "Noto Sans Devanagari", "Nunito", "Helvetica";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
