@@ -2,13 +2,15 @@
   <%= render 'favourites/favouritescard'%>
 <%# </div> %>
 
- <h2 class="text-center mt-5 mb-4">My Favourites</h2>
-  <div class="favourites-cards">
-    <% @favourites.group_by {|f| f.bookmark.country}.each do |country|%>
-      <h1> <%= country.first.name %> </h1>
-       <% country.second.each do |favourite|%>
-      <%= render "categories/app", bookmark: favourite.bookmark, favourite: favourite %>
-    <% end %>
-    <% end %>
-  </div>
+
+ <h2 class="text-center mt-5 mb-4">Favourites</h2>
+
+ <%= render 'favourites/favouritescard' %>
+
+ <br>
+
+<div class="col-md-12 text-center">
+  <%= link_to :back do %>
+    <button type="button" class="btn btn-primary text-center">Explore</button>
+  <% end %>
 </div>
