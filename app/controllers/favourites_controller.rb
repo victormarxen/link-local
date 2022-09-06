@@ -3,17 +3,13 @@ class FavouritesController < ApplicationController
   before_action :set_favourite, only: %i[destroy]
 
   def index
-    @favourites = Favourite.where(user: current_user)
+    @favourites = current_user.favourites
   end
 
   def create
     @favourite = Favourite.new(favourite_params)
     @favourite.user = current_user
-    if @favourite.save
-      redirect_to my_profile_path
-    else
-      render "categories#show"
-    end
+    @favourite.save
   end
 
   def destroy

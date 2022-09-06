@@ -4,10 +4,10 @@
       <%= country_select(nil, :country,
         {
           priority_countries: ["PT", "DE"],
-          selected: params[:country]
+            selected: params[:country]
         },
         {
-          class: "form-control rounded-4 bg-white ",
+          class: "form-control rounded-4 bg-white",
           data: { controller: "dropdown-submit", action: "change->dropdown-submit#change" }
         })
       %>
@@ -17,4 +17,3 @@
     <% end %>
   </div>
 </div>
-

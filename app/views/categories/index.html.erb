@@ -42,10 +42,15 @@
   <%= render 'shared/search' %>
 </div>
 <br>
+
 <div class="row categories-grid__container">
   <ul data-search-country-target="country" style="list-style: none;" class="categories-grid p-0">
+
+<div class="row">
+  <ul data-search-country-target="country" style="list-style: none;">
     <% @categories.each do |category|%>
       <li><%= render 'categorycard', icon: category.icon, title: category.name, category: category, country: params[:country] %></li>
     <% end %>
   </ul>
 </div>
+

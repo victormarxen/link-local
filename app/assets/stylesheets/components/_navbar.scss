@@ -1,6 +1,10 @@
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
-  background: white;
+  background-color:  #eee;
+}
+
+.navbar-dark {
+  background: #F4F4F4;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,12 +16,13 @@
 }
 
 .white-bg {
-  background: white;
+  background: #F4F4F4;
   padding: 12px;
 
   button {
     background: $blue;
-    opacity: 0.8;
+    font-size: 15px;
+    // opacity: 0.8;
   }
 }
 
@@ -31,5 +36,15 @@
 
 .navbar-link {
   text-decoration: none;
+  color: $blue;
+}
+
+// .home-page__logo{
+//   color: blue;
+//   font-size: 35px;
+// }
+
+.fa-house::before {
+  font-size: 30px;
   color: $blue;
 }

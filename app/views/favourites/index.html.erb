@@ -1,8 +1,14 @@
-<h1>Saved/Favourite Apps</h1>
-<ul>
-  <li>Navbar</li>
-  <li>Banner like Uber</li>
-  <li>GoBackbutton</li>
-  <li>Expandable App Cards with Name, Description, 2 Links and Favourites/UnSaveButton</li>
-  <li>Footer</li>
-</ul>
+<%# <div class="col-md-12 text-center mt-4">
+  <%= render 'favourites/favouritescard'%>
+<%# </div> %>
+
+
+ <h2 class="text-center mt-5 mb-4">Favourites</h2>
+
+ <%= render 'favourites/favouritescard' %>
+
+ <br>
+
+<div class="col-md-12 text-center">
+  <%= link_to "Home", categories_path, class: "btn btn-primary rounded-4 profile-link mt-4" %>
+</div>

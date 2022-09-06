@@ -9,6 +9,7 @@ Bookmark.destroy_all
 Favourite.destroy_all
 
 puts 'Creating categories...'
+
 dating = { name: 'Dating', photo: 'app/assets/images/card2.jpeg' }
 events = { name: 'Events', photo: 'app/assets/images/card1.jpeg' }
 marketplaces = { name: 'Marketplaces', photo: 'app/assets/images/card8.jpeg' }
@@ -26,13 +27,12 @@ banking = { name: 'Banking', photo: 'app/assets/images/card14.jpeg' }
   puts "Created #{category.name}!"
 end
 
-
 puts "creating users..."
 alex_img = URI.open("https://cdn.pixabay.com/photo/2021/04/05/12/39/man-6153298_960_720.jpg")
 alex = User.new(first_name: "Alexander", last_name: "Costa", email: 'alex@gmail.com', password: "123123")
 alex.photo.attach(io: alex_img, filename: "alex_photo.jpg", content_type: "image/jpg")
 alex.save
-a = User.create(first_name: "Miguel", last_name: "Costelo", email: 'a@a.a', password: "123123")
+# = User.create(first_name: "Miguel", last_name: "Costelo", email: 'a@a.a', password: "123123")
 puts "Users created!"
 
 puts "Creating countries.."
@@ -45,7 +45,7 @@ tinder = Application.new(
   name: "Tinder",
   description: "Tinder is probably the most popular dating app in Portugal. Unlike other dating apps where you search based on a number of specific filters (e.g. does the person want a relationship, do they have kids, how tall are they, etc), Tinder leaves the hard work up to you. All it does it show you one profile after another which you can swipe left or right on.
 
-  However, Tinder isn’t very good at helping you find the right person, but it is the most popular app which is why everyone continues to use it.",
+  However, Tinder isn't very good at helping you find the right person, but it is the most popular app which is why everyone continues to use it.",
   playstore: ""
 )
 tinder.category = Category.find_by(name: "Dating")
@@ -56,9 +56,9 @@ puts "Created Tinder!"
 
 badoo = Application.new(
   name: "Badoo",
-  description: "Badoo is an app that many visitors to Portugal probably won’t have heard of, but one that’s very popular in countries like Spain and Portugal. It follows a similar structure as Tinder by swiping left or right on profiles you like or don’t like. However there are additional features which make it easier to find profiles who’ve liked you.
+  description: "Badoo is an app that many visitors to Portugal probably won't have heard of, but one that’s very popular in countries like Spain and Portugal. It follows a similar structure as Tinder by swiping left or right on profiles you like or don’t like. However there are additional features which make it easier to find profiles who’ve liked you.
 
-  Given its local popularity, you’ll likely need to speak some Portuguese if you want to chat with the people there.",
+  Given its local popularity, you'll likely need to speak some Portuguese if you want to chat with the people there.",
   playstore: "https://apps.apple.com/us/app/badoo-dating-chat-friends/id351331194"
 )
 badoo_img = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf-yxBbN6MztVz1vm2jzyVesv_rXIN8pUzcCt7PhFDjtH7LEC3jp_OhxiHGfCuXr18mKE&usqp=CAU")
