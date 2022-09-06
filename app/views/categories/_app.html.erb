@@ -13,10 +13,12 @@
               <p class="m-0 favourite-remove" style="line-height: 35px"><strong><i class="fa-solid fa-circle-minus"></i> Remove</strong></p>
             <% end %>
           <% else %>
-            <p class="m-0" style="line-height: 35px"><strong>Already in Favourites</strong></p>
+            <i class="fa-solid fa-heart"></i>
           <% end %>
         <% else %>
-          <%= link_to "❤️", favourites_path(bookmark_id: bookmark), data: { turbo_method: "post" }, class: "favourite-btn" %>
+          <%= link_to favourites_path(bookmark_id: bookmark), data: { turbo_method: "post" }, class: "favourite-btn"  do %>
+            <i class="fa-regular fa-heart"></i>
+          <% end %>
         <% end %>
         <div class="links">
           <%= link_to bookmark.application.appstore do %>
