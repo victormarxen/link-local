@@ -9,11 +9,7 @@ class FavouritesController < ApplicationController
   def create
     @favourite = Favourite.new(favourite_params)
     @favourite.user = current_user
-    if @favourite.save
-      redirect_to my_profile_path
-    else
-      render "categories#show"
-    end
+    @favourite.save
   end
 
   def destroy
