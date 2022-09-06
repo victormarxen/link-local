@@ -11,19 +11,35 @@
  }
 
 .home-page {
-  padding: 150px 20px 30px;
+  padding: 90px 20px 30px;
 }
 
 .home-page__logo{
-  width:50%
+  width:70%
+}
+
+.home-page__text{
+  color: white;
+  text-align: start;
+  margin: 10px;
+  padding: 20px 20px 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+  opacity: 0.6;
 }
 
 .home-page__search-bar{
   display:flex;
-  margin: 30px 0px;
+  opacity: 0.7;
+  width:80%;
+  margin: auto
 }
 
 .home-page__buttons{
+    padding: 260px 20px 30px;
     display: flex;
     justify-content: space-around;
     bottom: auto;
@@ -103,6 +119,10 @@
   }
 }
 
+}
+
+.create-button {
+  padding-bottom: 15px;
 }
 
 .subscribe-button-mt{
