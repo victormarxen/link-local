@@ -1,4 +1,6 @@
-<div class="text-center category-img" style="background-image: url('<%= cl_image_path category.photo.key %>')">
+<div class="text-center category-img">
+  <div style="background-image: url('<%= cl_image_path category.photo.key %>')" class="category-card__bg-img">
+  </div>
   <div class="shadow rounded-4 d-flex fs-md-3 fs-sm-4 categories-cards">
     <%= link_to category_path(category, country), class: "text-black flex-grow-1 d-flex flex-row align-items-center text-decoration-none justify-content-center" do %>
       <div class="card-product-infos">

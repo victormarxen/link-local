@@ -1,46 +1,33 @@
-<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <%#= <h5 id="linklocal-carousel">Linklocal</h5> %>
-    <%= link_to root_path, id: "linklocal-carousel" do %>
-      <%= image_tag "Logo1.jpg" %>
-    <% end %>
-    <div class="carousel-item active" data-bs-interval="10000">
-      <%= image_tag "index1.jpeg", class: "d-block w-100" %>
-      <div class="carousel-description">
-        <p>Find the best apps wherever you are.</p>
-      </div>
+<div class="home-banner rounded-4 ">
+  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-ride="false">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active custom-buttom" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2" class="custom-buttom"></button>
     </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <%= image_tag "index2.jpeg", class: "d-block w-100" %>
-      <div class="carousel-description">
-        <p>Choose your country, download the app and go.</p>
+    <div class="carousel-inner">
+      <%= link_to root_path, id: "linklocal-carousel" do %>
+      <% end %>
+      <div class="carousel-item active" data-bs-interval="10000" >
+        <%= image_tag "iphone.png", class: "d-block w-100 bg-image rounded-4"%>
+        <div class="carousel-description">
+          <p>Main Banner with the phone</p>
+        </div>
       </div>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag "index3.jpeg", class: "d-block w-100" %>
-      <div class="carousel-description">
-        <p>Enjoy millions of apps around the world.</p>
+      <div class="carousel-item" data-bs-interval="2000">
+        <%= image_tag "iphone.png", class: "d-block w-100 bg-image rounded-4" %>
+        <div class="carousel-description">
+          <p>Favourites Banner</p>
+        </div>
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
 
-<div class="col-md-12 text-center mt-4">
+
+<div class="search-bar">
   <%= render 'shared/search' %>
 </div>
+
 <br>
 
 <div class="row categories-grid__container">
@@ -53,4 +40,3 @@
     <% end %>
   </ul>
 </div>
-
