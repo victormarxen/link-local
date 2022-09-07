@@ -1,11 +1,13 @@
 <nav class="navbar navbar-dark mx-3">
-  <div class="container-fluid white-bg">
+  <div class="container-fluid white-bg d-flex justify-content-space-between">
+  <div>
     <%= link_to categories_path(country: params["country"]), class: "home-page__logo" do %>
       <i class="fa-solid fa-house p-1"></i>
-      <%# <%= image_tag "Logo3.jpg", class: "home-page__logo" %>
     <% end %>
+    </div>
+    <%= image_tag "Logo1.jpg", class: "logo" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon p-1"></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
       <div class="d-flex justify-content-around text-align-center">
