@@ -3,6 +3,10 @@
   background-color:  #eee;
 }
 
+.container-fluid.white-bg{
+  // justify-content: space-evenly;
+}
+
 .navbar-dark {
   background: #F4F4F4;
 }
@@ -12,12 +16,12 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  // width: 50px;
 }
 
 .white-bg {
   background: #F4F4F4;
-  padding: 12px;
+  padding: 0px;
 
   button {
     background: $blue;
@@ -45,7 +49,7 @@
 // }
 
 .fa-house::before {
-  font-size: 30px;
+  font-size: 31px;
   color: $blue;
 }
 
@@ -54,6 +58,7 @@
   border-color: blue;
 }
 
-.home-page__logo {
-  width: 0%;
+.logo {
+  width: 35%;
+  // align-content: center;
 }
