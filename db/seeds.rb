@@ -12,14 +12,14 @@ puts 'Creating categories...'
 
 dating = { name: 'Dating', photo: 'app/assets/images/card2.jpeg' }
 events = { name: 'Events', photo: 'app/assets/images/card1.jpeg' }
-marketplaces = { name: 'Marketplaces', photo: 'app/assets/images/card8.jpeg' }
+shops = { name: 'Shops', photo: 'app/assets/images/card8.jpeg' }
 delivery = { name: 'Delivery', photo: 'app/assets/images/card5.jpeg' }
 ride = { name: 'Ride', photo: 'app/assets/images/card4.jpeg' }
 transport = { name: 'Transport', photo: 'app/assets/images/card12.jpeg' }
 stay = { name: 'Stay', photo: 'app/assets/images/card13.jpeg' }
 banking = { name: 'Banking', photo: 'app/assets/images/card14.jpeg' }
 
-[dating, events, marketplaces, delivery, ride, transport, stay, banking].each do |attributes|
+[dating, events, shops, delivery, ride, transport, stay, banking].each do |attributes|
   category = Category.new(name: attributes[:name])
   category_img = File.open(attributes[:photo], 'rb')
   category.photo.attach(io: category_img, filename: "#{attributes[:name]}_category.jpg", content_type: "image/jpg")
