@@ -3,23 +3,24 @@
   <div class="home-page" style="">
     <div class="home-page__top">
       <%= image_tag "Logo4.jpg", class: "home-page__logo" %>
-      <br>
-      <br>
-      <h4>Get the apps used by locals.</h4>
-      <br>
-      <br>
-      <h4>Where are you going ?</h4>
-      <%= render 'shared/search' %>
     </div>
-
-    <div class="home-page__buttons">
-      <% if current_user %>
-        <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: "delete" }, class: "btn btn-primary rounded-4" %>
-      <% else %>
-        <%= link_to "Sign In", new_user_session_path, class: "btn btn-primary rounded-4" %>
-        <br>
-        <%= link_to "Create an account", new_user_registration_path, class: "text-white text-decoration-none" %>
-      <% end %>
+    <div class="home-page__text">
+      <h2>Find the apps used by locals.</h2>
     </div>
   </div>
+</div>
+
+<div class="home-page__search-bar">
+  <%= render 'shared/search' %>
+</div>
+
+<div class="home-page__buttons">
+  <div class="create-button">
+    <%= link_to "Create account", new_user_registration_path, class: "btn btn-flat" %>
+  </div>
+  <% if current_user %>
+    <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: "delete" }, class: "text-white" %>
+  <% else %>
+    <%= link_to "Sign In", new_user_session_path, class: "text-white" %>
+  <% end %>
 </div>
