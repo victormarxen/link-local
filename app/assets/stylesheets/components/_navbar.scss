@@ -24,7 +24,7 @@
   padding: 0px;
 
   button {
-    background: $blue;
+    background-color: rgba(34,87,191,255);
     font-size: 15px;
     // opacity: 0.8;
   }
@@ -50,7 +50,7 @@
 
 .fa-house::before {
   font-size: 31px;
-  color: $blue;
+  color: rgba(34,87,191,255)
 }
 
 .fa-house{
