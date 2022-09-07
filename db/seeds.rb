@@ -10,14 +10,14 @@ Favourite.destroy_all
 
 puts 'Creating categories...'
 
-dating = { name: 'Dating', photo: 'app/assets/images/card2.jpeg' }
-events = { name: 'Events', photo: 'app/assets/images/card1.jpeg' }
-shops = { name: 'Shops', photo: 'app/assets/images/card8.jpeg' }
-delivery = { name: 'Delivery', photo: 'app/assets/images/card5.jpeg' }
-ride = { name: 'Ride', photo: 'app/assets/images/card4.jpeg' }
+dating = { name: 'Dating', photo: 'app/assets/images/twohands.jpg' }
+events = { name: 'Events', photo: 'app/assets/images/eventing2.jpg' }
+shops = { name: 'Shops', photo: 'app/assets/images/shops.jpg' }
+delivery = { name: 'Delivery', photo: 'app/assets/images/instafood.jpg' }
+ride = { name: 'Ride', photo: 'app/assets/images/ubergirl.jpg' }
 transport = { name: 'Transport', photo: 'app/assets/images/card12.jpeg' }
-stay = { name: 'Stay', photo: 'app/assets/images/card13.jpeg' }
-banking = { name: 'Banking', photo: 'app/assets/images/card14.jpeg' }
+stay = { name: 'Stay', photo: 'app/assets/images/key.jpg' }
+banking = { name: 'Banking', photo: 'app/assets/images/money.jpg' }
 
 [dating, events, shops, delivery, ride, transport, stay, banking].each do |attributes|
   category = Category.new(name: attributes[:name])
