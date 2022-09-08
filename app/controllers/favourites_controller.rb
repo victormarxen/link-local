@@ -14,7 +14,7 @@ class FavouritesController < ApplicationController
 
   def destroy
     @favourite.destroy
-    redirect_to categories_path, status: :see_other
+    redirect_to favourites_path, status: :see_other
   end
 
   private
