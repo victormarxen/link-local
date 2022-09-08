@@ -1,11 +1,17 @@
 <div class="home-banner rounded-4 position-relative mt-5">
   <%= image_tag "pngegg.png", class: "d-block bg-image rounded-4 card-phone position-absolute"%>
   <div class="banner-content">
-    <% if  @country != nil %>
-      <h1>Welcome to <%= @country.full_name %>!</h1>
+    <% if @country.present? %>
+      <div>
+        <h1 class="mb-0">Welcome to</h1>
+        <h2 class="mb-0"><%= session[:country_name] %>!</h2>
+        <%= cl_image_tag @country.flag.key, class: "country-flag" %>
+      </div>
     <% else %>
-      <h1>Welcome!</h1>
-      <p>Select a country to start.</p>
+      <div>
+        <h1 class="mb-0">Welcome!</h1>
+        <p class="m-0">Select a country to start.</p>
+      </div>
     <% end %>
   </div>
 </div>
@@ -18,7 +24,7 @@
 <div class="row categories-grid__container">
     <ul data-search-country-target="country" style="list-style: none;" class="categories-grid">
       <% @categories.each do |category|%>
-        <li><%= render 'categorycard', icon: category.icon, title: category.name, category: category, country: params[:country] %></li>
+        <li><%= render 'categorycard', icon: category.icon, title: category.name, category: category, country: session[:country] %></li>
       <% end %>
     </ul>
 </div>

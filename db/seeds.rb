@@ -36,9 +36,20 @@ alex.save
 puts "Users created!"
 
 puts "Creating countries.."
-portugal = Country.create(name: 'PT')
-germany = Country.create(name: 'DE')
-england = Country.create(name: 'GB')
+portugal = Country.new(name: 'PT')
+portugal_flag = File.open("app/assets/images/portugal.png", 'rb')
+portugal.flag.attach(io: portugal_flag, filename: "portugal_flag.png", content_type: "image/png")
+portugal.save
+
+germany = Country.new(name: 'DE')
+germany_flag = File.open("app/assets/images/germany.png", 'rb')
+germany.flag.attach(io: germany_flag, filename: "germany_flag.png", content_type: "image/png")
+germany.save
+
+england = Country.new(name: 'GB')
+england_flag = File.open("app/assets/images/united-kingdom.png", 'rb')
+england.flag.attach(io: england_flag, filename: "england_flag.png", content_type: "image/png")
+england.save
 puts "Countries created!"
 
 puts "Creating applications.."

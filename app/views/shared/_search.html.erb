@@ -4,7 +4,7 @@
       <%= country_select(nil, :country,
         {
           priority_countries: ["PT", "DE", "GB"],
-          selected: params[:country],
+          selected: session[:country],
           include_blank: 'Select a country'
         },
         {

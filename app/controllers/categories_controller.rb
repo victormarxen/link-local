@@ -3,7 +3,14 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
-    @country = Country.find_by(name: params[:country])
+
+    if params[:country].present?
+      session[:country] = params[:country]
+      country = Country.find_by(name: params[:country])
+      session[:country_name] = country.full_name if country
+    end
+
+    @country = Country.find_by(name: session[:country])
   end
 
   def show
