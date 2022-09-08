@@ -28,6 +28,12 @@ document.addEventListener('turbo:load', function() {
       btn.addEventListener('click', function() {
         btn.classList.remove('fa-regular');
         btn.classList.add('fa-solid');
+        document.querySelector('.favorites-notice').innerHTML =
+          `<div class="alert alert-info alert-dismissible fade show m-1" role="alert">
+            Add to Favourites!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            </button>
+          </div>`
       })
     });
   }
