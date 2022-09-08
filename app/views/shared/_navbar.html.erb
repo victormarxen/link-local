@@ -1,12 +1,15 @@
 <nav class="navbar navbar-dark mx-3">
-  <div class="container-fluid white-bg d-flex justify-content-space-between">
-  <div>
-    <%= link_to categories_path, class: "home-page__logo" do %>
-      <i class="fa-solid fa-house p-1"></i>
-    <% end %>
+  <div class=" white-bg d-flex justify-content-space-between align-items-center">
+    <div>
+      <%= link_to categories_path, class: "home-page__logo" do %>
+        <i class="fa-solid fa-house p-1"></i>
+      <% end %>
     </div>
 
-    <%= image_tag "Logo1.jpg", class: "logo" %>
+      <%= link_to root_path, class: 'd-block text-center' do %>
+        <%= image_tag "Logo1.jpg", class: "logo" %>
+      <% end %>
+
     <div id="menuToggle">
     <!--
     A fake / hidden checkbox is used as click reciever,
