@@ -3,7 +3,7 @@
     <%= form_with url: categories_path, method: :get do %>
       <%= country_select(nil, :country,
         {
-          priority_countries: ["PT", "DE"],
+          priority_countries: ["PT", "DE", "GB"],
           selected: params[:country],
           include_blank: 'Select a country'
         },
