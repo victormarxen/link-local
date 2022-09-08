@@ -1,7 +1,9 @@
 <h1 class="text-center pb-4"><%= @category.name %></h1>
 
-<% if @bookmarks.empty? %>
+
+
   <h5 class="alert alert-warning">Sorry, no applications found for this country..</h5>
+<% if @bookmarks.empty? %>
 <% else %>
   <% @bookmarks.each do |bookmark| %>
     <%= render 'app', bookmark: bookmark %>
@@ -10,4 +12,7 @@
 
 <div class="col-md-12 text-center">
   <%= link_to "Back", :back, class: "btn btn-back" %>
+</div>
+
+<div class='favorites-notice'>
 </div>
