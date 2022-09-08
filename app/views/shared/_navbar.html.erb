@@ -6,19 +6,51 @@
     <% end %>
     </div>
     <%= image_tag "Logo1.jpg", class: "logo" %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-      <div class="d-flex justify-content-around text-align-center">
-        <% if current_user %>
-          <%= link_to "Saved Apps", favourites_path, class: "navbar-link" %>
-          <%= link_to "My Profile", my_profile_path, class: "navbar-link" %>
-        <% else %>
-          <%= link_to "Log in", new_user_session_path, class: "navbar-link" %>
-        <% end %>
-      </div>
+    <div id="menuToggle">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input type="checkbox">
+
+    <!--
+    Some spans to act as a hamburger.
+
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+    <ul id="menu">
+      <% if current_user %>
+          <li><%= link_to "Profile", my_profile_path, class: "navbar-link" %></li>
+          <li><%= link_to "Favourites", favourites_path, class: "navbar-link" %></li>
+       <% else %>
+          <li><%= link_to "Log in", new_user_session_path, class: "navbar-link" %></li>
+       <% end %>
+    </ul>
+    </div>
     </div>
   </div>
 </nav>
 <br>
+
+<%# <button class="menuToggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+       <%# <input type="checkbox" /> %>
+      <%# <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <div class="d-flex justify-content-around text-align-center">
+      <ul id="menu">
+        <% if current_user %>
+          <%# <li><%= link_to "Saved Apps", favourites_path, class: "navbar-link" %></li>
+          <%# <li><%= link_to "My Profile", my_profile_path, class: "navbar-link" %></li>
+        <%# <% else %>
+          <%# <li><%= link_to "Log in", new_user_session_path, class: "navbar-link" %></li>
+        <%# <% end %>
