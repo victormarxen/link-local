@@ -1,13 +1,14 @@
-<h1 class="text-center pb-4"><%= @category.name %></h1>
-
+<div class="show-banner rounded-4 position-relative" style="padding: 40px;">
+  <h1 class="text-center pb-4 cat-name"><%= @category.name %></h1>
+</div>
 <% if @bookmarks.empty? %>
-  <h5 class="alert alert-warning">Sorry, no applications found for this country..</h5>
+  <h5 class="alert alert-warning">Applications are going to be added soon!</h5>
 <% else %>
   <% @bookmarks.each do |bookmark| %>
     <%= render 'app', bookmark: bookmark %>
   <% end %>
 <% end %>
 
-<div class="col-md-12 text-center">
+<div class="col-md-12 text-center" style="padding: 30px;">
   <%= link_to "Back", :back, class: "btn btn-back" %>
 </div>
