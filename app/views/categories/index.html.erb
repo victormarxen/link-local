@@ -1,6 +1,12 @@
 <div class="home-banner rounded-4 position-relative mt-5">
   <%= image_tag "pngegg.png", class: "d-block bg-image rounded-4 card-phone position-absolute"%>
   <div class="banner-content">
+    <% if  @country != nil %>
+      <h1>Welcome to <%= @country.full_name %>!</h1>
+    <% else %>
+      <h1>Welcome!</h1>
+      <p>Select a country to start.</p>
+    <% end %>
   </div>
 </div>
 

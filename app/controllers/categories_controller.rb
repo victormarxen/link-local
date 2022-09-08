@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+    @country = Country.find_by(name: params[:country])
   end
 
   def show

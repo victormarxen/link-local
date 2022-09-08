@@ -5,13 +5,13 @@
   <h3 class="text-center mt-2 mb-3"><%= "#{current_user.first_name} #{current_user.last_name}" %></h3>
   <p class="profile-info"><i class="fa-solid fa-envelope"></i> <%= current_user.email %></p>
  <div>
-    <%= link_to "Saved Apps", favourites_path, class: "btn btn-light rounded-4 profile-link mt-4 " %>
+    <%= link_to "Favourites", favourites_path, class: "btn btn-light rounded-4 profile-link mt-4 " %>
   </div>
 
 <br>
 
   <div>
-    <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary rounded-4 profile-link mt-4" %>
+    <%= link_to "Edit Profile", edit_user_registration_path, class: "profile-link text-center no-text-decoration my-3" %>
     <%= link_to "Sign Out", edit_user_registration_path, class: "profile-link text-center no-text-decoration my-3" %>
   </div>
 
